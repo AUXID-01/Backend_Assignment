@@ -3,4 +3,4 @@ venv/
 __pycache__/
 *.log
 credentials/
-data-engineering-assignment/credentials/service_account.json
+credentials/service_account.json
