@@ -21,9 +21,14 @@ def validate_row(row: Dict[str, Any]) -> List[str]:
 
     if row.get("Year"):
         try:
-            int(row["Year"])
+            year = int(row["Year"])
+            if year < 1 or year > 5:
+                errors.append("Year must be between 1 and 5")
         except ValueError:
             errors.append("Year must be numeric")
+    else:
+        errors.append("Missing year")
+
 
     return errors
 

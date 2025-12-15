@@ -17,6 +17,9 @@ def clean_row(row: Dict[str, Any]) -> Dict[str, Any]:
     # Normalize known fields (safe defaults)
     if "Email" in cleaned and cleaned["Email"]:
         cleaned["Email"] = cleaned["Email"].lower()
+    if "Year" in cleaned and cleaned["Year"] is not None:
+        cleaned["Year"] = cleaned["Year"].strip()
+
 
     return cleaned
 
