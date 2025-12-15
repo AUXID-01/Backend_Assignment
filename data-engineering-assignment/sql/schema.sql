@@ -10,8 +10,10 @@ CREATE TABLE IF NOT EXISTS students (
     email VARCHAR(150) UNIQUE NOT NULL,
     phone VARCHAR(20),
     year INT CHECK (year BETWEEN 1 AND 5),
+    department_id INT REFERENCES departments(id) ON DELETE SET NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
 
 CREATE TABLE IF NOT EXISTS courses (
     id SERIAL PRIMARY KEY,
